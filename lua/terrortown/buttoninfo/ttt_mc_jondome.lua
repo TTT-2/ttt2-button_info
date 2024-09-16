@@ -1,3 +1,0 @@
-BUTTONINFO.buttons = {
-    [1] = {},
-}
