@@ -1,0 +1,3 @@
+BUTTONINFO.buttons = {
+    [1] = {},
+}
