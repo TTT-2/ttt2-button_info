@@ -45,3 +45,12 @@ L.buttoninfo_clue_2019_b7_fridge = "Secret Fridge Passage"
 
 L.buttoninfo_clue_2018_b7_turn_on = "Turn on the lights if a traitor turned them off"
 L.buttoninfo_clue_2019_b7_fridge_toggle = "Interact to open/close the secret passage"
+
+-- minecraft_b5
+L.buttoninfo_minecraft_b5_test = "Test player in chamber"
+L.buttoninfo_minecraft_b5_drop = "Drop testsubject in lava"
+L.buttoninfo_minecraft_b5_close = "Close traitor test chamber"
+L.buttoninfo_minecraft_b5_open = "Open traitor test chamber"
+L.buttoninfo_minecraft_b5_exit_close = "Close traitor test chamber emergency exit"
+L.buttoninfo_minecraft_b5_exit_open = "Open traitor test chamber emergency exit"
+L.buttoninfo_minecraft_b5_ammo = "Interact to spawn ammo"

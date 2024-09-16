@@ -4,6 +4,9 @@ CreateConVar(
     { FCVAR_ARCHIVE, FCVAR_NOTIFY, FCVAR_REPLICATED }
 )
 
+BUTTON_TYPE_BUTTON = 0
+BUTTON_TYPE_LEVER = 1
+
 buttoninfo = {}
 
 buttoninfo.buttons = {}

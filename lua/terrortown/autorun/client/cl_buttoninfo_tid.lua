@@ -1,6 +1,10 @@
 local TryT = LANG.TryTranslation
 local ParT = LANG.GetParamTranslation
 
+local key_params = {
+    usekey = Key("+use", "USE"),
+}
+
 hook.Add("TTTRenderEntityInfo", "buttoninfo_tid", function(tData)
     local client = LocalPlayer()
     local ent = tData:GetEntity()
@@ -27,6 +31,16 @@ hook.Add("TTTRenderEntityInfo", "buttoninfo_tid", function(tData)
     local toggleState = ent:GetNWInt("m_toggle_state", -1)
 
     if buttonInfo then
+        if buttonInfo.buttonType then
+            if buttonInfo.buttonType == BUTTON_TYPE_BUTTON then
+                tData:SetTitle(TryT("name_button_default"))
+                tData:SetSubtitle(ParT("button_default", key_params))
+            elseif buttonInfo.buttonType == BUTTON_TYPE_LEVER then
+                tData:SetTitle(TryT("name_button_rotating"))
+                tData:SetSubtitle(ParT("button_rotating", key_params))
+            end
+        end
+
         if buttonInfo.title then
             tData:SetTitle(TryT(buttonInfo.title))
         end

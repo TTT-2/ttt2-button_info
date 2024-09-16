@@ -1,10 +1,9 @@
-BUTTONINFO.buttonID = 9
+BUTTONINFO.buttonID = 5
 
 BUTTONINFO.buttonType = BUTTON_TYPE_LEVER -- overwrite button type
 BUTTONINFO.descriptionForState = {
-    [1] = "buttoninfo_clue_2018_b7_turn_on",
+    [1] = "buttoninfo_minecraft_b5_test",
 }
 BUTTONINFO.hideForState = {
     [0] = true,
-    [2] = true,
 }
