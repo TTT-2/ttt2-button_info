@@ -57,6 +57,7 @@ if SERVER then
                 buttoninfo.buttons[buttonID] = {
                     buttonID = buttonID,
                     entID = button:EntIndex(),
+                    ent = button,
                 }
 
                 button:SetNWInt("buttonID", buttonID)
@@ -74,6 +75,14 @@ if SERVER then
 
     hook.Add("TTT2FinishedLoading", "buttoninfo_load_files", function()
         fileloader.LoadFolder("terrortown/buttoninfo/" .. game.GetMap() .. "/", false, CLIENT_FILE)
+    end)
+
+    hook.Add("Tick", "buttoninfo_update_toggle_state", function()
+        for i = 1, #buttoninfo.buttons do
+            local button = buttoninfo.buttons[i].ent
+
+            button:SetNWInt("m_toggle_state", button:GetInternalVariable("m_toggle_state"))
+        end
     end)
 
     net.Receive("TTT2ButtoninfoTeleport", function(_, ply)

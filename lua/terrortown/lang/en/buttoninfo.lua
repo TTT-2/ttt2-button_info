@@ -9,6 +9,7 @@ L.label_buttoninfo_list = "Select button to teleport to"
 L.label_buttoninfo_teleport = "teleport to button"
 
 L.buttoninfo_admin_info = "Button ID: {id}"
+L.buttoninfo_admin_hidden = "This targetID element would be hidden if not in admin mode"
 
 L.msg_buttoninfo_teleport_fail = "Could not teleport to desired button."
 

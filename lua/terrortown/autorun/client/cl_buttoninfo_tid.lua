@@ -22,6 +22,8 @@ hook.Add("TTTRenderEntityInfo", "buttoninfo_tid", function(tData)
     end
 
     local buttonInfo = buttoninfo.GetInfoFromEntity(ent)
+    local inAdminMode = GetConVar("ttt2_buttoninfo_show_admin_info"):GetBool()
+        and admin.IsAdmin(client)
 
     if buttonInfo then
         if buttonInfo.title then
@@ -33,7 +35,7 @@ hook.Add("TTTRenderEntityInfo", "buttoninfo_tid", function(tData)
         end
     end
 
-    if GetConVar("ttt2_buttoninfo_show_admin_info"):GetBool() and admin.IsAdmin(client) then
+    if inAdminMode then
         -- add an empty line if there's already data in the description area
         if tData:GetAmountDescriptionLines() > 0 then
             tData:AddDescriptionLine()
@@ -45,16 +47,29 @@ hook.Add("TTTRenderEntityInfo", "buttoninfo_tid", function(tData)
             --{ materialDNATargetID }
         )
 
-        tData:AddDescriptionLine(
-            "toggle state: " .. tostring(ent:GetInternalVariable("m_toggle_state") or nil)
-        )
-    else
-        return
+        tData:AddDescriptionLine("toggle state: " .. tostring(ent:GetNWInt("m_toggle_state", -1)))
     end
 
     -- if hidden and not in admin mode: hide
-    if buttonInfo and buttonInfo.hidden then
-        tData:EnableText(false)
-        tData:EnableOutline(false)
+    if
+        buttonInfo
+        and (
+            buttonInfo.hidden
+            or istable(buttonInfo.hideForState)
+                and buttonInfo.hideForState[ent:GetNWInt("m_toggle_state", -1)]
+        )
+    then
+        if inAdminMode then
+            tData:SetKey(nil)
+
+            tData:AddDescriptionLine(
+                TryT("buttoninfo_admin_hidden"),
+                COLOR_ORANGE
+                --{ materialDNATargetID }
+            )
+        else
+            tData:EnableText(false)
+            tData:EnableOutline(false)
+        end
     end
 end)
