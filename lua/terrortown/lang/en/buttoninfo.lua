@@ -33,5 +33,8 @@ L.buttoninfo_mc_jondome_rubbish = "Interact to spawn rubbish"
 L.buttoninfo_mc_jondome_wood = "Interact to spawn wood"
 L.buttoninfo_mc_jondome_stone = "Interact to spawn stone"
 L.buttoninfo_mc_jondome_resources = "Interact to spawn resources"
-
 L.buttoninfo_mc_jondome_enchantment = "Those who know are not fools"
+
+-- clue_se
+L.buttoninfo_clue_se_turn_on = "Turn on the lights"
+L.buttoninfo_clue_se_turn_off = "Turn off the lights"
