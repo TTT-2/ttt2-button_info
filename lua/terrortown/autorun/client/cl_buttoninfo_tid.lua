@@ -50,13 +50,12 @@ hook.Add("TTTRenderEntityInfo", "buttoninfo_tid", function(tData)
             tData:AddDescriptionLine()
         end
 
-        tData:AddDescriptionLine(
-            ParT("buttoninfo_admin_info", { id = buttonID }),
-            COLOR_ORANGE
-            --{ materialDNATargetID }
-        )
+        tData:AddDescriptionLine(ParT("buttoninfo_admin_info", { id = buttonID }), COLOR_ORANGE)
 
-        tData:AddDescriptionLine("toggle state: " .. tostring(toggleState))
+        tData:AddDescriptionLine(
+            ParT("buttoninfo_toggle_state", { state = toggleState }),
+            COLOR_ORANGE
+        )
     end
 
     -- if hidden and not in admin mode: hide
