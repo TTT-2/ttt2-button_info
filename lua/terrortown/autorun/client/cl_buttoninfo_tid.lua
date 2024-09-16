@@ -21,7 +21,7 @@ hook.Add("TTTRenderEntityInfo", "buttoninfo_tid", function(tData)
         return
     end
 
-    local buttonInfo = buttoninfo.GetFromEntity(ent)
+    local buttonInfo = buttoninfo.GetInfoFromEntity(ent)
 
     if buttonInfo then
         if buttonInfo.title then
@@ -44,5 +44,17 @@ hook.Add("TTTRenderEntityInfo", "buttoninfo_tid", function(tData)
             COLOR_ORANGE
             --{ materialDNATargetID }
         )
+
+        tData:AddDescriptionLine(
+            "toggle state: " .. tostring(ent:GetInternalVariable("m_toggle_state") or nil)
+        )
+    else
+        return
+    end
+
+    -- if hidden and not in admin mode: hide
+    if buttonInfo and buttonInfo.hidden then
+        tData:EnableText(false)
+        tData:EnableOutline(false)
     end
 end)

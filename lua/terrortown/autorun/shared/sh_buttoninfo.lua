@@ -9,7 +9,7 @@ buttoninfo = {}
 buttoninfo.buttons = {}
 buttoninfo.info = {}
 
-function buttoninfo.GetFromEntity(buttonEnt)
+function buttoninfo.GetInfoFromEntity(buttonEnt)
     local buttonID = buttonEnt:GetNWInt("buttonID", 0)
 
     if buttonID == 0 then
@@ -21,6 +21,10 @@ function buttoninfo.GetFromEntity(buttonEnt)
             return buttonInfo
         end
     end
+end
+
+function buttoninfo.GetEntityFromID(buttonID)
+    return Entity(buttoninfo.buttons[buttonID].entID)
 end
 
 function buttoninfo.GetChoices()
@@ -39,6 +43,8 @@ function buttoninfo.GetChoices()
 end
 
 if SERVER then
+    util.AddNetworkString("TTT2ButtoninfoTeleport")
+
     hook.Add("TTT2PostButtonInitialization", "buttoninfo_buttons_registered", function(buttonList)
         local buttonID = 1
 
@@ -69,26 +75,49 @@ if SERVER then
     hook.Add("TTT2FinishedLoading", "buttoninfo_load_files", function()
         fileloader.LoadFolder("terrortown/buttoninfo/" .. game.GetMap() .. "/", false, CLIENT_FILE)
     end)
+
+    net.Receive("TTT2ButtoninfoTeleport", function(_, ply)
+        local buttonPos = buttoninfo.GetEntityFromID(net.ReadUInt(16)):GetPos()
+
+        if not buttonPos then
+            LANG.Msg(ply, "msg_buttoninfo_teleport_fail", nil, MSG_MSTACK_WARN)
+
+            return
+        end
+
+        local spawnPos = plyspawn.MakeSpawnPointSafe(ply, buttonPos)
+
+        if not spawnPos then
+            LANG.Msg(ply, "msg_buttoninfo_teleport_fail", nil, MSG_MSTACK_WARN)
+
+            return
+        end
+
+        ply:SetPos(spawnPos)
+    end)
 end
 
 if CLIENT then
+    function buttoninfo.SpawnAtButton(buttonID)
+        net.Start("TTT2ButtoninfoTeleport")
+        net.WriteUInt(buttonID, 16)
+        net.SendToServer()
+    end
+
     net.ReceiveStream("TTT2ButtonInfo", function(buttons)
         buttoninfo.buttons = buttons
     end)
 
     local function OnClassLoaded(class, path, name)
-        print("class loaded", class, path, name)
-
         class.type = name
     end
 
     hook.Add("TTT2FinishedLoading", "buttoninfo_build_classes", function()
-        print("building info classes")
         buttoninfo.info = classbuilder.BuildFromFolder(
             "terrortown/buttoninfo/" .. game.GetMap() .. "/",
             CLIENT_FILE,
-            "BUTTONINFO", -- class scope
-            OnClassLoaded, -- on class loaded callback
+            "BUTTONINFO",
+            OnClassLoaded,
             false -- should inherit
         )
     end)

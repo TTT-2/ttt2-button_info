@@ -22,7 +22,7 @@ function CLGAMEMODESUBMENU:Populate(parent)
         OnClick = function(slf)
             local buttonID, _ = buttonList:GetSelected()
 
-            print("teleporting to", buttonID)
+            buttoninfo.SpawnAtButton(buttonID)
         end,
         master = buttonList,
     })
