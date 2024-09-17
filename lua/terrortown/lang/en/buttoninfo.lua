@@ -68,7 +68,7 @@ L.buttoninfo_elevatorandstairs_go_3 = "Go to floor 3"
 L.buttoninfo_elevatorandstairs_go_2 = "Go to floor 2"
 L.buttoninfo_elevatorandstairs_go_1 = "Go to floor 1"
 L.buttoninfo_elevatorandstairs_go_0 = "Go to the ground floor"
-L.buttoninfo_elevatorandstairs_go_n1 = "Go to floor 0"
+L.buttoninfo_elevatorandstairs_go_n1 = "Go to floor -1"
 
 L.buttoninfo_elevatorandstairs_ventdoor = "Open door to vent shaft"
 L.buttoninfo_elevatorandstairs_teledoor = "Open door to teleport chamber"
