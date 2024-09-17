@@ -54,3 +54,21 @@ L.buttoninfo_minecraft_b5_open = "Open traitor test chamber"
 L.buttoninfo_minecraft_b5_exit_close = "Close traitor test chamber emergency exit"
 L.buttoninfo_minecraft_b5_exit_open = "Open traitor test chamber emergency exit"
 L.buttoninfo_minecraft_b5_ammo = "Interact to spawn ammo"
+
+-- elevatorandstairs
+L.buttoninfo_elevatorandstairs_call_4 = "Call elevator to floor 4"
+L.buttoninfo_elevatorandstairs_call_3 = "Call elevator to floor 3"
+L.buttoninfo_elevatorandstairs_call_2 = "Call elevator to floor 2"
+L.buttoninfo_elevatorandstairs_call_1 = "Call elevator to floor 1"
+L.buttoninfo_elevatorandstairs_call_0 = "Call elevator to the ground floor"
+L.buttoninfo_elevatorandstairs_call_n1 = "Call elevator to floor -1"
+
+L.buttoninfo_elevatorandstairs_go_4 = "Go to floor 4"
+L.buttoninfo_elevatorandstairs_go_3 = "Go to floor 3"
+L.buttoninfo_elevatorandstairs_go_2 = "Go to floor 2"
+L.buttoninfo_elevatorandstairs_go_1 = "Go to floor 1"
+L.buttoninfo_elevatorandstairs_go_0 = "Go to the ground floor"
+L.buttoninfo_elevatorandstairs_go_n1 = "Go to floor 0"
+
+L.buttoninfo_elevatorandstairs_ventdoor = "Open door to vent shaft"
+L.buttoninfo_elevatorandstairs_teledoor = "Open door to teleport chamber"
