@@ -72,3 +72,18 @@ L.buttoninfo_elevatorandstairs_go_n1 = "Go to floor -1"
 
 L.buttoninfo_elevatorandstairs_ventdoor = "Open door to vent shaft"
 L.buttoninfo_elevatorandstairs_teledoor = "Open door to teleport chamber"
+
+-- lego
+L.buttoninfo_lego_tester_title = "TEST ME"
+L.buttoninfo_lego_keyboard_title = "Keyboard"
+
+L.buttoninfo_lego_tester = "Test subject in tester chamber"
+L.buttoninfo_lego_tdoor = "Open traitor room door"
+L.buttoninfo_lego_tlight = "Toggle basement light"
+L.buttoninfo_lego_trap_rocket = "Launch rocket"
+L.buttoninfo_lego_trap_helicopter = "Crash police helicopter"
+L.buttoninfo_lego_trap_ambulance = "Start explosive ambulance"
+L.buttoninfo_lego_cam_1 = "Switch to cam 1"
+L.buttoninfo_lego_cam_2 = "Switch to cam 2"
+L.buttoninfo_lego_cam_3 = "Switch to cam 3"
+L.buttoninfo_lego_keyboard = "Toggle music track"
