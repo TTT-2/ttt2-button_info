@@ -87,3 +87,7 @@ L.buttoninfo_lego_cam_1 = "Switch to cam 1"
 L.buttoninfo_lego_cam_2 = "Switch to cam 2"
 L.buttoninfo_lego_cam_3 = "Switch to cam 3"
 L.buttoninfo_lego_keyboard = "Toggle music track"
+
+-- arcane_mine
+L.buttoninfo_arcane_mine_tester = "Test the two players in the chambers"
+L.buttoninfo_arcane_mine_teleporter = "Teleport out of this room"
