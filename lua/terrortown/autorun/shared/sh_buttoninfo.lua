@@ -84,6 +84,10 @@ if SERVER then
         for i = 1, #buttoninfo.buttons do
             local button = buttoninfo.buttons[i].ent
 
+            if not IsValid(button) then
+                continue
+            end
+
             button:SetNWInt("m_toggle_state", button:GetInternalVariable("m_toggle_state"))
         end
     end)
