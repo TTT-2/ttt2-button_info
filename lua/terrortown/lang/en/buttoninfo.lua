@@ -91,3 +91,15 @@ L.buttoninfo_lego_keyboard = "Toggle music track"
 -- arcane_mine
 L.buttoninfo_arcane_mine_tester = "Test the two players in the chambers"
 L.buttoninfo_arcane_mine_teleporter = "Teleport out of this room"
+
+-- minecraft_b7_summer
+L.buttoninfo_minecraft_b7_summer_ammo = "Interact to spawn ammo"
+L.buttoninfo_minecraft_b7_summer_tweapon = "Interact to get random traitor weapon (costs 1 credit)"
+L.buttoninfo_minecraft_b7_summer_test = "Test player in chamber"
+L.buttoninfo_minecraft_b7_summer_drop = "Drop testsubject in lava"
+L.buttoninfo_minecraft_b7_summer_close = "Close traitor test chamber"
+L.buttoninfo_minecraft_b7_summer_open = "Open traitor test chamber"
+L.buttoninfo_minecraft_b7_summer_exit_close = "Close traitor test chamber emergency exit"
+L.buttoninfo_minecraft_b7_summer_exit_open = "Open traitor test chamber emergency exit"
+L.buttoninfo_minecraft_b7_summer_ammo_weapons = "Interact to spawn ammo and weapons"
+L.buttoninfo_minecraft_b7_summer_resources = "Interact to spawn resources"

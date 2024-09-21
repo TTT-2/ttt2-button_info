@@ -9,6 +9,7 @@ TTT2 Button Info is an addon that brings more info about the button you're looki
 - [ttt_lego](https://steamcommunity.com/sharedfiles/filedetails/?id=295897079)
 - [ttt_mc_jondome](https://steamcommunity.com/sharedfiles/filedetails/?id=322655757)
 - [ttt_minecraft_b5](https://steamcommunity.com/sharedfiles/filedetails/?id=159321088)
+- [ttt_minecraft_b7_summer](https://steamcommunity.com/sharedfiles/filedetails/?id=2572798746)
 
 ## How to Contribute
 
